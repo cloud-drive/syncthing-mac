@@ -1,0 +1,13 @@
+#!/bin/bash
+
+export STGUIADDRESS=http://127.0.0.1:8384
+
+dir=$(dirname "$0")
+bin="$dir/../Resources/syncthing"
+
+echo "$bin"
+if pgrep -f -x "$bin" ; then
+	open $STGUIADDRESS
+else
+ 	"$bin" &
+fi
